@@ -24,6 +24,7 @@ function! s:getSessionName(session_name)
 endfunction
 
 function! s:OpenSession(session_name)
+	let s:session_loading = 1
 	let session_name = s:getSessionName(a:session_name)
 	let filepath = g:sessions_root . '/' . session_name . '.vim'
 	let filepath = fnamemodify(filepath, ':p')
@@ -34,9 +35,16 @@ function! s:OpenSession(session_name)
 	else
 		echo "Session not found: " . filepath
 	endif
+	let s:session_loading = 0
 endfunction
 
 function! s:SaveSession(session_name)
+	" if we're in the middle of a sesson load don't go
+	" saving the session
+	if exists('s:session_loading') && s:session_loading
+		return
+	endif
+
 	if !exists('g:session_file')
 		let session_name = s:getSessionName(a:session_name)
 		let filepath = g:sessions_root . '/' . session_name . '.vim'
