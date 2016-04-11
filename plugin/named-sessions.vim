@@ -76,8 +76,14 @@ command! -bar -nargs=? -complete=customlist,s:SessionList OpenSession call s:Ope
 
 command! -bar -nargs=? SaveSession call s:SaveSession(<q-args>)
 
+function! s:VimStart()
+	if !argc()
+		call s:OpenSession('')
+	endif
+endfunction
+
 augroup bwells_sessions
   autocmd!
   autocmd BufEnter,VimLeavePre * exe s:persistSession()
-  " autocmd User Flags call Hoist('global', 'ObsessionStatus')
+  autocmd VimEnter * nested exe s:VimStart()
 augroup END
