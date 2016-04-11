@@ -10,9 +10,10 @@ between my projects within the same vim instance. This is where vim's
 `:mksession` really falls down.
 
 Tim Pope's obession.vim does a great job of fixing most of Vim's default
-session management, but stores its session files within each repo. This is
-adversarial to easy searching of available sessions to switch between. It also
-doesn't allow for in place switching of the active session.
+session management, but stores its session files within each project. This is
+adversarial to easy searching of available sessions to switch between. The
+provided command also doesn't allow for easy in place switching of the active
+session.
 
 vim-session does a great job of providing convenient commands based on session
 names, but has some show stopper annoying behaviors in my opinion and it seems
@@ -20,8 +21,8 @@ to be a dead project.
 
 vim-named-sessions provides
 
-* Sessions based on a name rather than a filename or path
-* In place session switching with tab completion of session names
+* Session management based on a name rather than a filename or path
+* In place session switching with tab completion of names
 * Automatically saves sessions once a session is activated
 * Never prompts you or bothers you about anything
 
