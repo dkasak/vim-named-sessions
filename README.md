@@ -24,6 +24,8 @@ vim-named-sessions provides
 * Session management based on a name rather than a filename or path
 * In place session switching with tab completion of names
 * Automatically saves sessions once a session is activated
+* Automatically restores a CWD's matching session if vim is started with no
+  arguments
 * Never prompts you or bothers you about anything
 
 ## Installation
