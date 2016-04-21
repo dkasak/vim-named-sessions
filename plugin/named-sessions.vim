@@ -38,6 +38,11 @@ function! s:OpenSession(session_name)
 	let s:session_loading = 0
 endfunction
 
+function! s:StopSession()
+	unlet g:session_file
+	unlet g:session_name
+endfunction
+
 function! s:SaveSession(session_name)
 	" if we're already in the middle of a sesson load don't proceed
 	if exists('s:session_loading') && s:session_loading
@@ -71,15 +76,24 @@ function! s:SessionList(ArgLead, Cmdline, Cursor)
 	return filelist
 endfunction
 
-command! -bar -nargs=? -complete=customlist,s:SessionList OpenSession call s:OpenSession(<q-args>)
-
-command! -bar -nargs=? SaveSession call s:SaveSession(<q-args>)
-
 function! s:VimStart()
 	if !argc()
 		call s:OpenSession('')
 	endif
 endfunction
+
+""""""""""
+" COMMANDS
+""""""""""
+
+" autocompleting OpenSession
+command! -bar -nargs=? -complete=customlist,s:SessionList OpenSession call s:OpenSession(<q-args>)
+
+" SaveSession
+command! -bar -nargs=? SaveSession call s:SaveSession(<q-args>)
+
+" StopSession
+command! -bar -nargs=0 StopSession call s:StopSession()
 
 augroup named_sessions
   autocmd!

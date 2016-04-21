@@ -54,6 +54,11 @@ for ease of tab completion typing. Session files are saved to `g:sessions_root`
 Opens a session of the provided name. Tab completion of available session names
 is provided.
 
+`:StopSession`
+
+Stops session tracking. The session will still be auto resumed the next time
+vim started with no arguments in the session's CWD.
+
 ## Options
 ----------
 
