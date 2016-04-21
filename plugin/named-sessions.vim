@@ -1,8 +1,8 @@
-if exists('g:bwells_sessions')
+if exists('g:named_sessions')
   finish
 endif
 
-let g:bwells_sessions = 1
+let g:named_sessions = 1
 
 let g:sessions_root = '~/.vim/sessions'
 
@@ -82,7 +82,7 @@ function! s:VimStart()
 	endif
 endfunction
 
-augroup bwells_sessions
+augroup named_sessions
   autocmd!
   autocmd BufEnter,VimLeavePre * exe s:persistSession()
   autocmd VimEnter * nested exe s:VimStart()
