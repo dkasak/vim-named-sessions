@@ -69,9 +69,10 @@ vim started with no arguments in the session's CWD.
 
 `g:sessions_root`
 
-Defaults to `~/.vim/sessions`
+Location session files will be saved. Defaults to `~/.vim/sessions`
 
 `GetDefaultName()`
 
-Default implementation uses the name of vim's current working directory.
-Override to use any naming scheme you'd like. Perhaps the git repo name?
+Default implementation uses the name of vim's current working directory to pick
+a session name.  Override to use any naming scheme you'd like. Perhaps the git
+repo name?
