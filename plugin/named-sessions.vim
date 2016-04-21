@@ -39,8 +39,7 @@ function! s:OpenSession(session_name)
 endfunction
 
 function! s:SaveSession(session_name)
-	" if we're in the middle of a sesson load don't go
-	" saving the session
+	" if we're already in the middle of a sesson load don't proceed
 	if exists('s:session_loading') && s:session_loading
 		return
 	endif
