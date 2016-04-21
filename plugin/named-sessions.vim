@@ -83,6 +83,6 @@ endfunction
 
 augroup named_sessions
   autocmd!
-  autocmd BufEnter,VimLeavePre * exe s:persistSession()
-  autocmd VimEnter * nested exe s:VimStart()
+  autocmd BufEnter,VimLeavePre * call s:persistSession()
+  autocmd VimEnter * nested call s:VimStart()
 augroup END
