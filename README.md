@@ -35,6 +35,11 @@ vim-named-sessions provides
 Plugin 'bwells/vim-named-sessions'
 ```
 
+#### vim-plug
+```
+Plug 'bwells/vim-named-sessions'
+```
+
 I strongly suggest adding `set sessionoptions-=options` in your vimrc.
 `options` are known to interact badly with session restoration. See `:help
 sessionoptions` for all available options.
