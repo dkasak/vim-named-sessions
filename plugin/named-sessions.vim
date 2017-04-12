@@ -4,7 +4,9 @@ endif
 
 let g:named_sessions = 1
 
-let g:sessions_root = '~/.vim/sessions'
+if !exists('g:sessions_root')
+    let g:sessions_root = '~/.vim/sessions'
+endif
 
 function! GetDefaultName()
 	return s:getNameFromCWD()
