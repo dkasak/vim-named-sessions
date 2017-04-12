@@ -9,7 +9,11 @@ if !exists('g:sessions_root')
 endif
 
 function! GetDefaultName()
-	return s:getNameFromCWD()
+    if exists("$TMUX")
+        return system('tmux display-message -p "#S" | tr -d "\n"')
+    else
+        return s:getNameFromCWD()
+    endif
 endfunction
 
 function! s:getNameFromCWD()
