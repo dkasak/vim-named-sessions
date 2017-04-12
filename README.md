@@ -26,6 +26,8 @@ vim-named-sessions provides
 * Automatically saves sessions once a session is activated
 * Automatically restores a CWD's matching session if vim is started with no
   arguments
+* If inside a tmux session, uses the name of the tmux session as the default
+  session name
 * Never prompts you or bothers you about anything
 
 ## Installation
